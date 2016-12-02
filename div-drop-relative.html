@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Test</title>
+<style>
+.dropdown.dropdown-processed{background-color:#add8e6;border:1px solid red;float:left;width:32%}
+.dropdown-container{background-color:red;float:left;width:calc(100% + 350px);display:none;}
+.box{float:left;width:100%}
+.dropdown:nth-child(3) .dropdown-container{float:right}
+@media (max-width: 1200px) {.dropdown-container{width:calc(100%)}}
+@media (max-width: 768px) {.dropdown.dropdown-processed{width:100%}}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $('div.dropdown').each(function() {
+    var $dropdown = $(this);
+    $("a.dropdown-link", $dropdown).click(function(e) {
+      e.preventDefault();
+      $div = $("div.dropdown-container", $dropdown);
+      $div.fadeToggle(10);
+      $("div.dropdown-container").not($div).hide();
+      return false;
+    });
+});
+    
+  $('html').click(function(){
+    $("div.dropdown-container").hide();
+  });
+     
+});
+
+</script>
+</head>
+
+<body>
+<div class="box">
+<div class="dropdown dropdown-processed">
+  <a class="dropdown-link" href="#">Options</a>
+  <div class="dropdown-container">
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+</div>
+
+<div class="dropdown dropdown-processed">
+  <a class="dropdown-link" href="#">Options</a>
+  <div class="dropdown-container">
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+</div>
+
+<div class="dropdown dropdown-processed">
+  <a class="dropdown-link" href="#">Options</a>
+  <div class="dropdown-container">
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+</div>
+</div>
+<div class="box">
+<div class="dropdown dropdown-processed">
+  <a class="dropdown-link" href="#">Options</a>
+  <div class="dropdown-container">
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+</div>
+
+<div class="dropdown dropdown-processed">
+  <a class="dropdown-link" href="#">Options</a>
+  <div class="dropdown-container">
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+</div>
+
+<div class="dropdown dropdown-processed">
+  <a class="dropdown-link" href="#">Options</a>
+  <div class="dropdown-container">
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
